@@ -6,5 +6,19 @@ namespace Books.Dominio.DTOs
 {
     public class DTOBook
     {
+        public string Id { set; get; }
+        public DTOVolumeInfo VolumeInfo { get; set; }
+    }
+
+    public class DTOVolumeInfo
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DTOImageLinks ImageLinks { get; set; }
+    }
+
+    public class DTOImageLinks
+    {
+        public string Thumbnail { get; set; }
     }
 }

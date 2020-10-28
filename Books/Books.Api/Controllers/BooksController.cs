@@ -18,11 +18,11 @@ namespace Books.Api.Controllers
         }
 
         [HttpGet, Route("{q:string}")]
-        public Task<ActionResult> Get([FromQuery] string filter)
+        public Task<ActionResult> Get([FromQuery] string filtro)
         {
             return Execute(() =>
             {
-
+                return _service.ObtenhaLivrosPorTermo(filtro);
             });
         }
     }

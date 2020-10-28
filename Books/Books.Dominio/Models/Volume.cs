@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Books.Repositorio.Models
+namespace Books.Dominio.Models
 {
     public class Volume
     {
