@@ -17,7 +17,7 @@ namespace Books.Api.Controllers
             _service = service;
         }
 
-        [HttpGet, Route("{q:string}")]
+        [HttpGet("{q}")]
         public Task<ActionResult> Get([FromQuery] string filtro)
         {
             return Execute(() =>
