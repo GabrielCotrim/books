@@ -6,6 +6,6 @@ namespace Books.Dominio.DTOs
 {
     public class DTOBooksResult
     {
-        public IList<DTOBook> Items { get; set; } = new List<DTOBook>();
+        public List<DTOBook> Items { get; set; } = new List<DTOBook>();
     }
 }

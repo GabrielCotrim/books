@@ -12,7 +12,7 @@ namespace Books.Api.Controllers
     {
         private ActionResult _result;
 
-        protected async Task<ActionResult> Execute(Action action)
+        protected async Task<ActionResult> ExecuteAsync(Action action)
         {
             return await Task.Run(() =>
             {
@@ -26,7 +26,7 @@ namespace Books.Api.Controllers
             });
         }
 
-        protected async Task<ActionResult> Execute<TResult>(Func<TResult> action)
+        protected async Task<ActionResult> ExecuteAsync<TResult>(Func<TResult> action)
         {
             return await Task.Run(() =>
             {
@@ -38,6 +38,17 @@ namespace Books.Api.Controllers
                 catch (Exception ex) { Error(ex); }
                 return _result;
             });
+        }
+
+        protected async Task<ActionResult> Execute<TResult>(Func<Task<TResult>> action)
+        {
+            try
+            {
+                var result = await action.Invoke();
+                Success(result);
+            }
+            catch (Exception ex) { Error(ex); }
+            return await Task.FromResult(_result);
         }
 
         protected void Success(object value = null) => _result = value is null ? (ActionResult)Ok() : Ok(value);

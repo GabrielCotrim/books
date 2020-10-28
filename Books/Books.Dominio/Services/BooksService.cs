@@ -16,14 +16,16 @@ namespace Books.Dominio.Services
     public class BooksService : IBooksService
     {
         private const string URI = "https://www.googleapis.com/books/v1/";
-        public async Task<VolumeResult> ObtenhaLivrosPorTermo(string filtro)
+        public async Task<VolumeResult> ObtenhaLivrosPorTermo(BookParametros parametros)
         {
-            using HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(URI);
+            using var client = new HttpClient
+            {
+                BaseAddress = new Uri(URI)
+            };
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var query = $"volumes?q={filtro}";
+            var query = $"volumes?q={parametros.Pesquisa}";
 
             var response = await client.GetAsync(query);
             if (response.IsSuccessStatusCode)
@@ -35,10 +37,10 @@ namespace Books.Dominio.Services
                 }
                 var result = JsonConvert.DeserializeObject<DTOBooksResult>(content);
                 var volumes = result.Items;
-                return new VolumeResult
+                return new VolumeResult 
                 {
-                    Items = volumes.ToList().Converta()
-                };            
+                    Items = volumes.Converta()
+                };
             }
             return new VolumeResult();
         }

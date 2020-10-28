@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:54982",
+      "applicationUrl": "https://localhost:54982",
       "sslPort": 44336
     }
   },
@@ -12,19 +12,11 @@
     "Books.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      "applicationUrl": "https://localhost:5001"
     },
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      "launchBrowser": true
     }
   }
 }

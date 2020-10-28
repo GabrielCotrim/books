@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Books.Dominio.DTOs
 {
-    public class DTOBook
+    public class DTOImageLinks
     {
-        public string Id { set; get; }
-        public DTOVolumeInfo VolumeInfo { get; set; }
+        public string Thumbnail { get; set; }
     }
 
     public class DTOVolumeInfo
@@ -17,8 +16,9 @@ namespace Books.Dominio.DTOs
         public DTOImageLinks ImageLinks { get; set; }
     }
 
-    public class DTOImageLinks
+    public class DTOBook
     {
-        public string Thumbnail { get; set; }
+        public string Id { set; get; }
+        public DTOVolumeInfo VolumeInfo { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Books.Dominio.Interfaces;
+using Books.Dominio.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Books.Api.Controllers
@@ -17,13 +17,10 @@ namespace Books.Api.Controllers
             _service = service;
         }
 
-        [HttpGet("{q}")]
-        public Task<ActionResult> Get([FromQuery] string filtro)
+        [HttpGet, Route("volumes")]
+        public async Task<ActionResult<VolumeResult>> Get([FromQuery] BookParametros parametros)
         {
-            return Execute(() =>
-            {
-                return _service.ObtenhaLivrosPorTermo(filtro);
-            });
+            return await Execute(() => _service.ObtenhaLivrosPorTermo(parametros));
         }
     }
 }
