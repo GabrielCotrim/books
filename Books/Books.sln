@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Api", "Books.Api\Books.Api.csproj", "{C08CCDCF-E8BC-4D89-A3AA-140C0CE0C343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Api", "Books.Api\Books.Api.csproj", "{C08CCDCF-E8BC-4D89-A3AA-140C0CE0C343}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Infra", "Books.Infra\Books.Infra.csproj", "{D1368123-E37A-4E32-95C7-232A690892A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Infra", "Books.Infra\Books.Infra.csproj", "{D1368123-E37A-4E32-95C7-232A690892A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Dominio", "Books.Dominio\Books.Dominio.csproj", "{F54CAD31-3091-4A33-B6C4-638F63D1F7D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Dominio", "Books.Dominio\Books.Dominio.csproj", "{F54CAD31-3091-4A33-B6C4-638F63D1F7D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Repositorio", "Books.Repositorio\Books.Repositorio.csproj", "{A4B9E2A8-FD74-49FE-ACB0-A0D8D695898B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books.Repositorio", "Books.Repositorio\Books.Repositorio.csproj", "{A4B9E2A8-FD74-49FE-ACB0-A0D8D695898B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Web", "Books.Web\Books.Web.csproj", "{DB3EB4CF-CF23-43B9-ABB4-CB89DC0EAD87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A4B9E2A8-FD74-49FE-ACB0-A0D8D695898B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4B9E2A8-FD74-49FE-ACB0-A0D8D695898B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4B9E2A8-FD74-49FE-ACB0-A0D8D695898B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3EB4CF-CF23-43B9-ABB4-CB89DC0EAD87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3EB4CF-CF23-43B9-ABB4-CB89DC0EAD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3EB4CF-CF23-43B9-ABB4-CB89DC0EAD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3EB4CF-CF23-43B9-ABB4-CB89DC0EAD87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
