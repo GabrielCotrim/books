@@ -26,7 +26,7 @@ namespace Books.Api.Controllers
         [HttpPost, Route("favorite")]
         public Task<ActionResult> Post([FromBody] VolumeModel volume)
         {
-            return ExecuteAsync(() => { });
+            return ExecuteAsync(() => _service.AdicioneFavorito(volume));
         }
     }
 }

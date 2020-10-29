@@ -18,7 +18,7 @@ namespace Books.Dominio.Services
     {
         private const string URI = "https://www.googleapis.com/books/v1/";
 
-        private IRepositorioDeVolume _repositorio;
+        private readonly IRepositorioDeVolume _repositorio;
 
         public BooksService(IRepositorioDeVolume repositorio) 
         {
@@ -53,6 +53,11 @@ namespace Books.Dominio.Services
                 };
             }
             return new VolumeResult();
+        }
+
+        public void AdicioneFavorito(VolumeModel volume)
+        {
+            _repositorio.AdicioneFavorito(volume.Converta());
         }
     }
 }
