@@ -1,5 +1,4 @@
 ﻿using Books.Dominio.Models;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Books.Dominio.Interfaces

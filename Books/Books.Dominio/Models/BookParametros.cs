@@ -8,13 +8,13 @@ namespace Books.Dominio.Models
 {
     public class BookParametros
     {
-        [Display(Name = "pesquisa")]
+        [Required, Display(Name = "pesquisa")]
         public string Pesquisa { get; set; }
 
         [Display(Name = "pagina")]
-        public int? Pagina { get; set; }
+        public int Pagina { get; set; }
 
-        [Display(Name = "itemPorPagina")]
-        public int? ItemPorPagina { get; set; }
+        [Display(Name = "itensPorPagina"), Range(0, 40)]
+        public int ItensPorPagina { get; set; }
     }
 }

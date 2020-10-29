@@ -22,5 +22,11 @@ namespace Books.Api.Controllers
         {
             return await Execute(() => _service.ObtenhaLivrosPorTermo(parametros));
         }
+
+        [HttpPost, Route("favorite")]
+        public Task<ActionResult> Post([FromBody] VolumeModel volume)
+        {
+            return ExecuteAsync(() => { });
+        }
     }
 }

@@ -9,15 +9,15 @@ namespace Books.Dominio.Extensoes
 {
     public static class DTOConvertModelExtension
     {
-        public static List<Volume> Converta(this List<DTOBook> list)
+        public static List<VolumeModel> Converta(this List<DTOBook> list)
         {
             return list.Select(item => item.Converta()).ToList();
         }
 
-        public static Volume Converta(this DTOBook book)
+        public static VolumeModel Converta(this DTOBook book)
         {
             var volumeInfo = book.VolumeInfo;
-            return new Volume
+            return new VolumeModel
             {
                 Id = book.Id,
                 Titulo = volumeInfo.Title,

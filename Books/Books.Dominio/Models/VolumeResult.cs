@@ -6,6 +6,7 @@ namespace Books.Dominio.Models
 {
     public class VolumeResult
     {
-        public List<Volume> Items { get; set; } = new List<Volume>();
+        public int TotalItems { get; set; }
+        public List<VolumeModel> Items { get; set; } = new List<VolumeModel>();
     }
 }
