@@ -26,7 +26,7 @@ namespace Books.Api.Controllers
             });
         }
 
-        protected async Task<ActionResult> ExecuteAsync<TResult>(Func<TResult> action)
+        protected async Task<ActionResult<TResult>> ExecuteAsync<TResult>(Func<TResult> action)
         {
             return await Task.Run(() =>
             {
@@ -40,7 +40,7 @@ namespace Books.Api.Controllers
             });
         }
 
-        protected async Task<ActionResult> Execute<TResult>(Func<Task<TResult>> action)
+        protected async Task<ActionResult<TResult>> Execute<TResult>(Func<Task<TResult>> action)
         {
             try
             {

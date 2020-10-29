@@ -8,5 +8,7 @@ namespace Books.Repositorio.Interfaces
     public interface IRepositorioDeVolume
     {
         void AdicioneFavorito(Volume volume);
+        List<Volume> ObtenhaFavoritos();
+        void DeleteFavorito(string id);
     }
 }

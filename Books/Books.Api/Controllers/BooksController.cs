@@ -18,15 +18,27 @@ namespace Books.Api.Controllers
         }
 
         [HttpGet, Route("volumes")]
-        public async Task<ActionResult<VolumeResult>> Get([FromQuery] BookParametros parametros)
+        public Task<ActionResult<VolumeResult>> Get([FromQuery] BookParametros parametros)
         {
-            return await Execute(() => _service.ObtenhaLivrosPorTermo(parametros));
+            return Execute(() => _service.ObtenhaLivrosPorTermo(parametros));
         }
 
         [HttpPost, Route("favorite")]
         public Task<ActionResult> Post([FromBody] VolumeModel volume)
         {
             return ExecuteAsync(() => _service.AdicioneFavorito(volume));
+        }
+
+        [HttpGet, Route("favorites")]
+        public Task<ActionResult<VolumeResult>> Get()
+        {
+            return ExecuteAsync(_service.ObtenhaFavoritos);
+        }
+
+        [HttpDelete, Route("favorite")]
+        public Task<ActionResult> Delete([FromQuery] string id)
+        {
+            return ExecuteAsync(() => _service.DeleteFavorito(id));
         }
     }
 }

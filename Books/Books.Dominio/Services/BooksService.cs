@@ -59,5 +59,20 @@ namespace Books.Dominio.Services
         {
             _repositorio.AdicioneFavorito(volume.Converta());
         }
+
+        public VolumeResult ObtenhaFavoritos()
+        {
+            var favoritos = _repositorio.ObtenhaFavoritos();
+            return new VolumeResult
+            {
+                TotalItems = favoritos.Count,
+                Items = favoritos.Converta()
+            };
+        }
+
+        public void DeleteFavorito(string id)
+        {
+            _repositorio.DeleteFavorito(id);
+        }
     }
 }
