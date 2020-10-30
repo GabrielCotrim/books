@@ -1,3 +1,36 @@
 ﻿@{
     ViewData["Title"] = "Volume pesquisa";
 }
+
+@model Books.Web.Models.VolumeResult
+
+
+<div class="volumes">
+    <h1>Volumes</h1>
+
+    <div class="volumes-container">
+        @foreach (var item in Model.Items)
+        {
+            <div class="volume-item mb-4">
+                <div class="volume">
+                    <div class="volume-imagem">
+                        <img src="@Url.Action("GetImagem", "Volume", new { url = item.ImageLink })" height="125" width="100" />
+                    </div>
+                </div>
+                <div class="volume volume-descricao">
+                    <div class="volume-titulo">
+                        <h3>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </h3>
+                    </div>
+                    <div class="volume-resumo">
+                        @Html.DisplayFor(modelItem => item.ResumoAbreviado)
+                    </div>
+                    <div class="volume-favorite">
+                        <button type="submit"></button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

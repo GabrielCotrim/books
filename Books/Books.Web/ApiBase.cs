@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -19,6 +20,23 @@ namespace Books.Web
         }
 
         public static ApiBase ApiVolume = new ApiBase("https://localhost:5001/api/books/");
+
+        public async Task<byte[]> GetByteArray(string uri)
+        {
+            var path = "wwwroot/img/content.jpg";
+            byte[] result = File.ReadAllBytes(path);
+            try
+            {
+                using var client = new HttpClient();
+
+                result = await client.GetByteArrayAsync(uri);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return result;
+        }
 
         public async Task<TResult> Get<TResult>(string uriParams)
         {

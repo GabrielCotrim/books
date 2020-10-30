@@ -55,11 +55,56 @@ button.accept-policy {
     width: 100%;
 }
 
+/*Volume-container*/
+.volumes h1{
+    text-align:center;
+    margin-bottom: 4px;
+}
+div.volume-item {
+    width: 100%;
+}
+div.volume {
+    height: 130px;
+    display: inline-block;
+}
+
+div.volume-descricao {
+    width: 75%;
+    padding: 15px;
+}
+
+.volume-descricao div {
+    display: block;
+}
+
+.volume-imagem {
+    margin-top: 4px
+}
+
+div.volume-imagem {
+    margin: 0 0 10px 0;
+    display:block;
+}
+
+.volume-imagem img {
+    vertical-align: baseline !important;
+}
+
+.volume-titulo h3 {
+    font-size: 20px;
+}
+
+.volume-resumo {
+    color: #70757A;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
