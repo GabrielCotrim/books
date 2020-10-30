@@ -8,7 +8,7 @@ namespace Books.Dominio.Models
 {
     public class BookParametros
     {
-        [Required, Display(Name = "pesquisa")]
+        [Display(Name = "pesquisa")]
         public string Pesquisa { get; set; }
 
         [Display(Name = "pagina")]
