@@ -62,11 +62,11 @@ namespace Books.Dominio.Services
 
         public VolumeResult ObtenhaFavoritos(BookParametros parametros)
         {
-            var favoritos = _repositorio.ObtenhaFavoritos().Paginate(parametros.Pagina, parametros.ItensPorPagina).ToList();
+            var favoritos = _repositorio.ObtenhaFavoritos();
             return new VolumeResult
             {
                 TotalItems = favoritos.Count,
-                Items = favoritos.Converta()
+                Items = favoritos.Paginate(parametros.Pagina, parametros.ItensPorPagina).ToList().Converta()
             };
         }
 
