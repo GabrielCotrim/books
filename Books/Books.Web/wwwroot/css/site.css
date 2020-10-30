@@ -51,6 +51,10 @@ button.accept-policy {
   line-height: inherit;
 }
 
+.volume-favorite button.btn-favorite {
+    color: yellow;
+} 
+
 .navbar-nav li:first-child {
     width: 100%;
 }

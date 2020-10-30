@@ -27,10 +27,24 @@
                         @Html.DisplayFor(modelItem => item.ResumoAbreviado)
                     </div>
                     <div class="volume-favorite">
-                        <button type="submit"></button>
+                        <button type="submit" name="id" id="search-btn-@item.Id" onclick="btnFavorite('@item.Id')" class="btn btn-flat">
+                            <i class="fa fa-star"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         }
     </div>
 </div>
+
+<script defer>
+    function btnFavorite(id) {
+        var element = document.getElementById("search-btn-" + id);
+        if (element.classList.contains("btn-favorite")) {
+            element.classList.remove("btn-favorite");
+        }
+        else {
+            element.classList.add("btn-favorite");
+        }
+    }
+</script>
