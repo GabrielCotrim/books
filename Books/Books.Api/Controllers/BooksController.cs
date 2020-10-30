@@ -30,9 +30,9 @@ namespace Books.Api.Controllers
         }
 
         [HttpGet, Route("favorites")]
-        public Task<ActionResult<VolumeResult>> Get()
+        public Task<ActionResult<VolumeResult>> GetFavoritos([FromQuery] BookParametros parametros)
         {
-            return ExecuteAsync(_service.ObtenhaFavoritos);
+            return ExecuteAsync(() => _service.ObtenhaFavoritos(parametros));
         }
 
         [HttpDelete, Route("favorite")]
